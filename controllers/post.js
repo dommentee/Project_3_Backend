@@ -10,7 +10,9 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-  res.send("post page")
+  Posts.find({}, (erorr, foundPosts) => {
+    res.json(foundPosts)
+  })
 })
 
 module.exports = router
