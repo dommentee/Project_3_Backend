@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose')//for database
 const cors = require('cors')
 
-// middleware
+// middlewaregit
 const app = express();
 app.use(cors())
 const PORT = 3001//react runs on 3000
