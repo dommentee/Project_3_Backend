@@ -13,6 +13,11 @@ app.use(express.json())//call express.json for data
 app.get('/', (req, res) => {
   res.send("post app")
 })
+
+//controllers
+const postsController = require('./controllers/post.js')
+app.use('/posts', postsController)
+  
 app.listen(PORT, () => {
   console.log('listening to', PORT)
 })
