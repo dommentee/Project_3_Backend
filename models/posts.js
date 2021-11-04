@@ -3,7 +3,13 @@ const mongoose = require('mongoose')
 const postsSchema = new mongoose.Schema(
   {
     title: String,
-    description: String
+    description: String,
+    comments: [
+      {
+        creater: mongoose.Schema.ObjectId,//might be String
+        comment: String
+      }
+    ]
   },
   {
     timestamps: true
