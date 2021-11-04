@@ -22,15 +22,16 @@ const PORT = process.env.PORT || 3003;
 //Database
 //___________________
 // How to connect to the database either via heroku or locally
-const PROJECT3_DB = process.env.PROJECT3_DB;
+const MONGODB_URI  = process.env.MONGODB_URI
 
 // Connect to Mongo
-mongoose.connect(PROJECT3_DB,  { useNewUrlParser: true});
+mongoose.connect(MONGODB_URI  ,  { useNewUrlParser: true});
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
-db.on('connected', () => console.log('mongo connected: ', PROJECT3_DB));
+db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
+
 
 app.use(express.json())//call express.json for data
 // console.log(process.env)
