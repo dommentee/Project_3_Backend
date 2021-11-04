@@ -40,12 +40,12 @@ app.get('/', (req, res) => {
   res.send("post app")
 })
 
-//controllers
+//Controllers
 const postsController = require('./controllers/post.js')
 app.use('/posts', postsController)
 
 //___________________
-//Listener
+//Listeners
 //___________________
 app.listen(PORT, () => console.log( 'Listening on port', PORT));
 
